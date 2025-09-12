@@ -1,4 +1,4 @@
-/* Import digital clock style font */
+
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 body {
@@ -7,11 +7,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #000000; /* plain black background for LED look */
+    background: #000000; 
     font-family: 'Share Tech Mono', monospace;
 }
 
-/* Clock container */
+
 .DateandTime {
     text-align: center;
     padding: 20px 40px;
@@ -25,7 +25,7 @@ body {
     font-size: 1.6rem;
     font-weight: 400;
     margin-bottom: 15px;
-    color: #ff4444; /* Red LED color */
+    color: #ff4444;
     text-shadow: 
         0 0 6px #ff4444,
         0 0 12px rgba(255, 68, 68, 0.7);
@@ -53,3 +53,4 @@ body {
         0 0 6px #ff8080,
         0 0 14px #ff8080;
 }
+

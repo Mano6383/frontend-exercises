@@ -1,0 +1,55 @@
+/* Import digital clock style font */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000000; /* plain black background for LED look */
+    font-family: 'Share Tech Mono', monospace;
+}
+
+/* Clock container */
+.DateandTime {
+    text-align: center;
+    padding: 20px 40px;
+    border-radius: 12px;
+    background: rgba(20, 20, 20, 0.8);
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+}
+
+/* Date styling */
+#date {
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: #ff4444; /* Red LED color */
+    text-shadow: 
+        0 0 6px #ff4444,
+        0 0 12px rgba(255, 68, 68, 0.7);
+}
+
+/* Time styling */
+#time {
+    font-size: 4.5rem;
+    font-weight: 700;
+    letter-spacing: 6px;
+    color: #ff1a1a;
+    text-shadow: 
+        0 0 10px #ff1a1a,
+        0 0 20px #ff1a1a,
+        0 0 40px rgba(255, 26, 26, 0.9);
+}
+
+/* AM/PM styling */
+#ampm {
+    font-size: 1.3rem;
+    margin-left: 8px;
+    vertical-align: super;
+    color: #ff8080;
+    text-shadow: 
+        0 0 6px #ff8080,
+        0 0 14px #ff8080;
+}

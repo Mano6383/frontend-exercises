@@ -16,12 +16,16 @@ btn.addEventListener('click',()=>{
 	let currency1=document.querySelector('.left_con').value
 	let currency2=document.querySelector('.right_con').value
 	let amount=document.querySelector('.left_amount').value
+    if(currency1==currency2){
+        alert("Choose different currencies to convert")
+    }
 	if(amount==0||amount=="")
 		alert("Enter a valid amount to convert")
 	else {
     fetch(`https://api.frankfurter.dev/v1/latest?amount=${amount}&from=${currency1}&to=${currency2}`)
       .then(response => response.json())
       .then(data => {
+        console.log(data);  
         document.querySelector('.right_amount').value = data.rates[currency2];
       });
   }

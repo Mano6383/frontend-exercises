@@ -1,75 +1,86 @@
-body{
-    font-family: Arial, sans-serif;
-    background-color: #1A2A6C;
+* {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+.head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#464159;
+    color: #6c7b95;
+    height: 12vh;
+    padding: 10px;
+}
+.inputSection{
+    background-color: #8bbabb;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px;
+    height: 12vh;
 }
-.container{
-    background: #FF6F61;
-    color: #ECECEC;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.inputSection input{
+    background-color: #464159;
+    color:white;
     width: 300px;
-    border-radius: 15px;
-    overflow: hidden ;
-}
-.container:hover{
-    transform: scale(1.02);
-    translate: 0 -5px;
-}
-.container ol{
-    margin: 20px;
-    height: 250px;
-}
-.addBtn{
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
+    height: 30px;
     border-radius: 5px;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+}
+.inputSection button{
+    height: 30px;
     margin-left: 10px;
-}
-.addBtn:hover{
-    background-color: #45a049;
-}
-.todo{
-    width: 70%;
-    padding: 10px;
-    border: 1px solid #ccc;
     border-radius: 5px;
     border: none;
+    padding: 5px 10px;
+    background-color: #464159;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
 }
-.todo:focus{
-    outline: none;
+.inputSection select{
+    
+    margin-left: 10px;
+    border-radius: 5px;
     border: none;
+    padding: 5px;
+    background-color: #464159;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
 }
-.instructions {
-    background: rgba(255, 255, 255, 0.15);
+.task{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 76vh;
+}
+.task div h3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 10px;
-    margin-top: 15px;
-    border-radius: 10px;
-    font-size: 0.9rem;
-    color: #fff;
 }
-
-.instructions h3 {
-    margin: 0 0 8px 0;
-    font-size: 1rem;
-    color: #FFD700;
-    text-align: center;
+.task div ol{
+    margin-left: 30px;
+    padding: 10px;
+    font-weight: bold;
+    overflow-y: auto;
+    list-style: decimal;
 }
-
-.instructions ul {
-    margin: 0;
-    padding-left: 18px;
+.studywork{
+   background-color: #eafff7;
 }
-
-.instructions li {
-    margin-bottom: 6px;
+.daytodaywork{
+    background-color:#afffdf;
+}
+.personalwork{
+    background-color:#49beb7;
+}
+.task div ol li {
+    list-style-position: inside; 
 }

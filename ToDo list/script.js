@@ -1,9 +1,13 @@
-let input = document.querySelector('.todo')
+let input = document.querySelector('.input')
+let category = document.querySelector('.priority')
 let btn = document.querySelector('.addBtn')
-let todoList = document.querySelector('.task')
+let studyworks = document.querySelector('.studywork .taskList')
+let daytodayworks = document.querySelector('.daytodaywork .taskList')
+let personalworks = document.querySelector('.personalwork .taskList')
 let todos = []
+
 window.onload = function(){
-    let storedTodos = JSON.parse(localStorage.getItem('todoarray'))
+    let storedTodos = JSON.parse(localStorage.getItem("todos"))
     if(storedTodos!==null){
         todos = storedTodos
         for(let i=0;i<todos.length;i++){
@@ -11,34 +15,50 @@ window.onload = function(){
         }
     }
 }
-btn.addEventListener('click',()=>{
-	let todo = input.value
-    if(todo.length===0){
-        alert("Please enter a task")
+
+btn.addEventListener('click', () => {
+    if(input.value=="" || category.value==""){
+        alert("Please enter the task and select category")
         return
     }
-    input.value = ''
-	todos.push(todo)
-        localStorage.setItem('todoarray',JSON.stringify(todos))
-    console.log(todos)
-	addto(todo)
-	})
+
+    let todo = {
+        text: input.value,
+        category: category.value
+    }
+
+    todos.push(todo)
+    localStorage.setItem("todos", JSON.stringify(todos))
+    addto(todo)
+
+    input.value = ""
+    category.value = ""
+})
+
 function addto(todo){
-	let list = document.createElement('li')
-    list.style.cursor = 'pointer'
-	list.textContent = todo
-	todoList.appendChild(list)
+    let list = document.createElement('li')
+    list.innerHTML = todo.text
+
+    if(todo.category=="Study")
+        studyworks.appendChild(list)
+    if(todo.category=="Work")
+        daytodayworks.appendChild(list)
+    if(todo.category=="Personal")
+        personalworks.appendChild(list)
+
+    
     list.addEventListener('click',()=>{
-		list.style.textDecoration = 'line-through'
-	})
-    list.addEventListener('dblclick',()=> {
-        return remove(todo,list)
+        list.style.textDecoration = "line-through"
+        list.style.color = "grey"
+    })
+
+    list.addEventListener('dblclick',()=>{
+        list.remove()
+        remove(todo.text)
     })
 }
-function remove(todo,list){
-	let index = todos.indexOf(todo)
-	todos.splice(index,1)
-	todoList.removeChild(list)
-        localStorage.setItem('todoarray',JSON.stringify(todos))
-}
 
+function remove(todoText){
+    todos = todos.filter(t => t.text !== todoText)
+    localStorage.setItem("todos", JSON.stringify(todos))
+}

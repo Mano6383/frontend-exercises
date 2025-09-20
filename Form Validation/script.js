@@ -45,7 +45,7 @@ function validate() {
         successCount++;
     }
     if (successCount === totalFields) {
-        alert("🎉 Registration Successful!");
+        alert("Registration Successful!");
         form.reset(); 
     }
 }
@@ -69,4 +69,5 @@ const validateEmail = (email) => {
       .match(
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
+
   };
